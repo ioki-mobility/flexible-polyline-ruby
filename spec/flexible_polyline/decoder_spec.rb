@@ -11,12 +11,12 @@ RSpec.describe FlexiblePolyline::Decoder do
 
       it 'expects result header to be decoded header' do
         expect(result[:header]).to eq(decoded[:header])
-        end
+      end
 
       it 'expects result positions to be approx. decoded positions' do
         result[:positions].each_with_index do |position, pos_index|
           position.each_with_index do |pos_element, element_index|
-          expect(pos_element).to be_within(0.00001).of(decoded[:positions][pos_index][element_index])
+            expect(pos_element).to be_within(0.00001).of(decoded[:positions][pos_index][element_index])
           end
         end
       end

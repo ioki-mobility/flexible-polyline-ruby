@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-require 'byebug'
 
 RSpec.describe FlexiblePolyline::Encoder do
   ORIGINAL_LINES = File.read('spec/test/original.txt', encoding: 'utf-8').split("\n").freeze

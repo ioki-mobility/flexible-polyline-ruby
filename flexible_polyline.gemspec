@@ -18,16 +18,16 @@ Gem::Specification.new do |spec|
 
     For more information, visit: https://github.com/heremaps/flexible-polyline
   DESCRIPTION
-  spec.homepage = 'https://github.com/ioki-mobility/ruby-flexible-polygon'
+  spec.homepage = 'https://github.com/ioki-mobility/ruby-flexible-polyline'
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
   #spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://github.com/ioki-mobility/ruby-flexible-polygon'
-  spec.metadata['bug_tracker_uri'] = 'https://github.com/ioki-mobility/ioki-flexible-polygon/issues'
-  spec.metadata['changelog_uri'] = 'https://github.com/ioki-mobility/ruby-flexible-polygon/blob/main/CHANGELOG.md'
+  spec.metadata['source_code_uri'] = 'https://github.com/ioki-mobility/ruby-flexible-polyline'
+  spec.metadata['bug_tracker_uri'] = 'https://github.com/ioki-mobility/ruby-flexible-polyline/issues'
+  spec.metadata['changelog_uri'] = 'https://github.com/ioki-mobility/ruby-flexible-polyline/blob/main/CHANGELOG.md'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

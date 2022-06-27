@@ -3,7 +3,7 @@
 require_relative "lib/flexible_polyline/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "ruby-flexible-polyline"
+  spec.name = "flexible_polyline"
   spec.version = FlexiblePolyline::VERSION
   spec.authors = ["Ozan Bahar"]
   spec.email = ["ozan.bahar@ioki.com"]
@@ -36,8 +36,8 @@ Gem::Specification.new do |spec|
       (f == __FILE__) || f.match(%r{\A(?:(?:bin|test|spec|features)/|\.(?:git|travis|circleci)|appveyor)})
     end
   end
-  spec.bindir = 'bin'
-  spec.executables = ['flexible_polyline']
+  spec.bindir = "exe"
+  spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
   # Uncomment to register a new dependency of your gem

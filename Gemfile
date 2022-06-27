@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in ruby_flexible_polyline.gemspec
+# Specify your gem's dependencies in ruby-flexible-polyline.gemspec
 gemspec
 
 gem "rake", "~> 13.0"

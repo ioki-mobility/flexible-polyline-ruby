@@ -1,28 +1,47 @@
 # FlexiblePolyline
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/flexible_polyline`. To experiment with that code, run `bin/console` for an interactive prompt.
+The flexible polyline encoding from heremaps is a lossy compressed representation of a list of coordinate pairs or coordinate triples.
 
-TODO: Delete this and the text above, and describe your gem
+It achieves that by:
+
+   1. Reducing the decimal digits of each value.
+   2. Encoding only the offset from the previous point.
+   3. Using variable length for each coordinate delta.
+   4. Using 64 URL-safe characters to display the result.
+
+For more information, visit: https://github.com/heremaps/flexible-polyline
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'flexible_polyline'
+gem 'flexible_polyline', github: 'ioki-mobility/flexible-polyline'
 ```
 
 And then execute:
 
     $ bundle install
 
-Or install it yourself as:
-
-    $ gem install flexible_polyline
-
 ## Usage
 
-TODO: Write usage instructions here
+Encode:
+```ruby
+ FlexiblePolyline::Encoder.encode(third_dim: 1, precision: 8, third_dim_precision: 8, positions: [[-96.628241002595274, 34.155307026461529, 228.390420353746407]])
+```
+=> 
+"B4gBnq_r-_R-suzyrGm_vgqxqB"
+
+Decode:
+```ruby
+FlexiblePolyline::Decoder.decode('B4gBnq_r-_R-suzyrGm_vgqxqB')
+```
+
+=> 
+```json
+{"header": {"precision": 8, "third_dim": 1, "third_dim_precision": 8}, "positions": [[-96.628241, 34.15530703, 228.39042035]]} 
+```
+
 
 ## Development
 
@@ -32,7 +51,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/flexible_polyline.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ioki-mobility/flexible_polyline.
 
 ## License
 

@@ -34,12 +34,14 @@ module FlexiblePolyline
           last_lng += delta_lng
 
           if third_dim.zero?
-            res.push([last_lat.floor(6), last_lng.floor(6)])
+            res << [last_lat.round(header[:precision]), last_lng.round(header[:precision])]
             cnt += 2
           else
             delta_z = to_signed(decoder[cnt + 2]) / factor_z.to_f
             last_z += delta_z
-            res.push([last_lat.floor(6), last_lng.floor(6), last_z.floor(6)])
+            res << [last_lat.round(header[:precision]),
+                      last_lng.round(header[:precision]),
+                      last_z.round(header[:third_dim_precision])]
             cnt += 3
           end
         end

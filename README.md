@@ -16,7 +16,7 @@ For more information, visit: https://github.com/heremaps/flexible-polyline
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'flexible_polyline', github: 'ioki-mobility/flexible_polyline'
+gem 'ruby-flexible-polyline', github: 'ioki-mobility/ruby-flexible-polyline'
 ```
 
 And then execute:

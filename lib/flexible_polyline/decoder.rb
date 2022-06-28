@@ -14,6 +14,8 @@ module FlexiblePolyline
     class << self
 
       def decode(encoded)
+        raise ArgumentError, 'Invalid string' unless encoded.is_a? String
+
         decoder = decode_unsigned_values(encoded)
         header = decode_header(decoder[0], decoder[1])
 
@@ -46,7 +48,7 @@ module FlexiblePolyline
           end
         end
 
-        raise StandardError, 'Invalid encoding. Premature ending reached' if cnt != decoder.size
+        raise ArgumentError, 'Invalid encoding. Premature ending reached' if cnt != decoder.size
         {
           header: header,
           positions: res
@@ -76,13 +78,13 @@ module FlexiblePolyline
           end
         end
 
-        raise StandardError, 'Invalid encoding' if shift.positive?
+        raise ArgumentError, 'Invalid encoding' if shift.positive?
 
         result_list
       end
 
       def decode_header(version, encoded_header)
-        raise StandardError, 'Invalid format version' if to_numeric(version) != FORMAT_VERSION
+        raise ArgumentError, 'Invalid format version' if to_numeric(version) != FORMAT_VERSION
 
         header_number = to_numeric(encoded_header)
         precision = header_number & 15

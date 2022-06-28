@@ -44,13 +44,13 @@ module FlexiblePolyline
 
       def encode_header(precision, third_dim, third_dim_precision)
         if precision.negative? || precision > 15
-          raise StandardError, 'precision out of range. Should be between 0 and 15'
+          raise ArgumentError, 'precision out of range. Should be between 0 and 15'
         end
         if third_dim_precision.negative? || third_dim_precision > 15
-          raise StandardError, 'third_dim_precision out of range. Should be between 0 and 15'
+          raise ArgumentError, 'third_dim_precision out of range. Should be between 0 and 15'
         end
         if third_dim.negative? || third_dim > 7 || third_dim == 4 || third_dim == 5
-          raise StandardError, 'third_dim should be between 0, 1, 2, 3, 6 or 7'
+          raise ArgumentError, 'third_dim should be between 0, 1, 2, 3, 6 or 7'
         end
 
         res = (third_dim_precision << 7) | (third_dim << 4) | precision

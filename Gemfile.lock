@@ -13,7 +13,7 @@ GEM
     parser (3.1.2.0)
       ast (~> 2.4.1)
     rainbow (3.1.1)
-    rake (13.0.6)
+    rake (13.2.1)
     regexp_parser (2.5.0)
     rexml (3.3.6)
       strscan
@@ -52,7 +52,7 @@ PLATFORMS
 DEPENDENCIES
   bigdecimal (~> 3.1.2)
   flexible_polyline!
-  rake (~> 13.0)
+  rake (~> 13.2)
   rspec (~> 3.0)
   rubocop (~> 1.21)
 

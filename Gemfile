@@ -8,4 +8,4 @@ gemspec
 gem "rake", "~> 13.2"
 gem "rspec", "~> 3.0"
 gem "rubocop", "~> 1.21"
-gem "bigdecimal", "~> 3.1.2"
+gem "bigdecimal", "~> 3.1.9"
